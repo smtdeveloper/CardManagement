@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using BotanoDemoCardManagement.Application.Features.Cards.Commands.AddCard;
+using BotanoDemoCardManagement.Application.Features.Cards.Commands.UpdateCard;
 using BotanoDemoCardManagement.Application.Features.Cards.Queries.GetAllCards;
 using BotanoDemoCardManagement.Application.Features.Cards.Queries.GetByIdCard;
 using BotanoDemoCardManagement.Domain.Entities.CardEntities;
-using BotanoDemoCardManagement.Domain.Entities.Enums;
 
 namespace BotanoDemoCardManagement.Application.Features.Cards.Profiles;
 
@@ -17,7 +17,25 @@ public class CardMappings : Profile
         CreateMap<CardQuestionChoice, ChoiceAddResponse>().ReverseMap();
         CreateMap<QuestionAddResponse, CardQuestion>().ReverseMap();
         CreateMap<Card, AddCardCommandResponse>().ReverseMap();
-      
+
+        CreateMap<UpdateCardCommand, Card>()
+            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status))
+            .ForMember(dest => dest.Questions, opt => opt.MapFrom(src => src.Questions.Select(q => new CardQuestion
+            {
+                Id = q.Id,
+                Text = q.Text,
+                SortIndex = q.SortIndex,
+                Choices = q.Choices.Select(c => new CardQuestionChoice
+                {
+                    Id = c.Id,
+                    Text = c.Text,
+                    SortIndex = c.SortIndex
+                }).ToList()
+            }).ToList()));
+
+        CreateMap<Card, UpdateCardCommandResponse>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
+
         CreateMap<AddCardCommand, Card>()            
              .ForMember(dest => dest.Questions, opt => opt.MapFrom(src => src.Questions.Select(q => new CardQuestion
              {
@@ -48,7 +66,5 @@ public class CardMappings : Profile
 
         CreateMap<CardQuestion, QuestionResponse>()
             .ForMember(dest => dest.Choices, opt => opt.MapFrom(src => src.Choices.OrderBy(c => c.SortIndex).ToList()));
-
-        
     }
 }

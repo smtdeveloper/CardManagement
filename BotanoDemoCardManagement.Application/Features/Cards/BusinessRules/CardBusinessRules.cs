@@ -5,7 +5,7 @@ namespace BotanoDemoCardManagement.Application.Features.Cards.BusinessRules;
 public class CardBusinessRules
 {
 
-    public async Task CheckIfCompanyIsNull(Card? company)
+    public async Task CheckIfCardIsNull(Card? company)
     {
         if (company == null)
         {

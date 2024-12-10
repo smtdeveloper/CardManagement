@@ -27,7 +27,7 @@ public class AddCardCommandHandlers : IRequestHandler<AddCardCommand, AddCardCom
         Card card = _mapper.Map<Card>(request); // Ensure proper mapping happens here.
 
         // Avoid adding questions and choices manually here if it's already handled in AutoMapper.
-        await _cardBusinessRules.CheckIfCompanyIsNull(card);
+        await _cardBusinessRules.CheckIfCardIsNull(card);
 
         card.CreatedDate = DateTime.UtcNow;
         Card addedCard = await _cardRepository.AddAsync(card, cancellationToken);

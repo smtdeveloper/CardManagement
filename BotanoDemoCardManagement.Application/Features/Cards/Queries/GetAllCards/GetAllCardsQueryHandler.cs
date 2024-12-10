@@ -2,7 +2,6 @@
 using BotanoDemoCardManagement.Application.Interfaces.Repositories;
 using BotanoDemoCardManagement.Domain.Entities.CardEntities;
 using MediatR;
-using System.Linq.Expressions;
 
 namespace BotanoDemoCardManagement.Application.Features.Cards.Queries.GetAllCards;
 

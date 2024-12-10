@@ -23,15 +23,15 @@ public class UpdateCardCommandHandler : IRequestHandler<UpdateCardCommand, Updat
 
     public async Task<UpdateCardCommandResponse> Handle(UpdateCardCommand request, CancellationToken cancellationToken)
     {
-        var company = await _cardRepository.GetByIdAsync(request.Id, cancellationToken);
-        await _cardBusinessRules.CheckIfCompanyIsNull(company);
+        var card = await _cardRepository.GetByIdAsync(request.Id, cancellationToken);
+        await _cardBusinessRules.CheckIfCardIsNull(card);
 
-        company = _mapper.Map(request, company);
-        var updatedCompany = await _cardRepository.Update(company!);
-        await _cardBusinessRules.CheckIfCompanyIsNull(updatedCompany);
+        card = _mapper.Map(request, card);
 
-        UpdateCardCommandResponse response = _mapper.Map<UpdateCardCommandResponse>(company);
+        var updatedCard = await _cardRepository.Update(card);
+        await _unitOfWork.CommitAsync();
+        var response = _mapper.Map<UpdateCardCommandResponse>(updatedCard);
         return response;
-    }
 
+    }
 }

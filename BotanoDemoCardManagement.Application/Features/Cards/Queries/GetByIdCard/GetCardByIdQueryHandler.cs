@@ -21,7 +21,7 @@ public class GetCardByIdQueryHandler : IRequestHandler<GetCardByIdQuery, GetCard
     public async Task<GetCardByIdQueryResponse> Handle(GetCardByIdQuery request, CancellationToken cancellationToken)
     {
         Card? card = await _cardRepository.GetCardByIdAsync(request.Id, cancellationToken);
-        await _cardBusinessRules.CheckIfCompanyIsNull(card);
+        await _cardBusinessRules.CheckIfCardIsNull(card);
         return _mapper.Map<GetCardByIdQueryResponse>(card);
     }
 

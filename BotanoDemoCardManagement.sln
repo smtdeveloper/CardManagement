@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C4249819-0C60-4CD2-9E29-8F28783F95B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{121ED1F1-E846-4E79-8275-F410178A79A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{CCDAD637-5F1C-4A3F-ABD1-0D10E19842C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{2CA66E7E-38CC-45FF-913C-7B131DB20580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Application", "BotanoDemoCardManagement.Application\BotanoDemoCardManagement.Application.csproj", "{26EB48D5-D397-402E-B0C1-9C3C065C17A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Domain", "BotanoDemoCardManagement.Domain\BotanoDemoCardManagement.Domain.csproj", "{A1D60557-53C5-4EAB-8C80-C61DC016FFB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Persistence", "BotanoDemoCardManagement.Persistence\BotanoDemoCardManagement.Persistence.csproj", "{61469BF6-A21E-4E67-A08E-66D6E285C799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Api", "BotanoDemoCardManagement.Api\BotanoDemoCardManagement.Api.csproj", "{01C1C527-B15D-4129-B5D1-C91BF287BA02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Shared", "BotanoDemoCardManagement.Shared\BotanoDemoCardManagement.Shared.csproj", "{B3D402C5-D06F-4CAA-9072-9C7B2642C267}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26EB48D5-D397-402E-B0C1-9C3C065C17A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EB48D5-D397-402E-B0C1-9C3C065C17A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EB48D5-D397-402E-B0C1-9C3C065C17A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EB48D5-D397-402E-B0C1-9C3C065C17A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D60557-53C5-4EAB-8C80-C61DC016FFB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D60557-53C5-4EAB-8C80-C61DC016FFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D60557-53C5-4EAB-8C80-C61DC016FFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D60557-53C5-4EAB-8C80-C61DC016FFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61469BF6-A21E-4E67-A08E-66D6E285C799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61469BF6-A21E-4E67-A08E-66D6E285C799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61469BF6-A21E-4E67-A08E-66D6E285C799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61469BF6-A21E-4E67-A08E-66D6E285C799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C1C527-B15D-4129-B5D1-C91BF287BA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C1C527-B15D-4129-B5D1-C91BF287BA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C1C527-B15D-4129-B5D1-C91BF287BA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C1C527-B15D-4129-B5D1-C91BF287BA02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D402C5-D06F-4CAA-9072-9C7B2642C267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D402C5-D06F-4CAA-9072-9C7B2642C267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D402C5-D06F-4CAA-9072-9C7B2642C267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D402C5-D06F-4CAA-9072-9C7B2642C267}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{26EB48D5-D397-402E-B0C1-9C3C065C17A2} = {C4249819-0C60-4CD2-9E29-8F28783F95B4}
+		{A1D60557-53C5-4EAB-8C80-C61DC016FFB4} = {C4249819-0C60-4CD2-9E29-8F28783F95B4}
+		{61469BF6-A21E-4E67-A08E-66D6E285C799} = {121ED1F1-E846-4E79-8275-F410178A79A9}
+		{01C1C527-B15D-4129-B5D1-C91BF287BA02} = {CCDAD637-5F1C-4A3F-ABD1-0D10E19842C7}
+		{B3D402C5-D06F-4CAA-9072-9C7B2642C267} = {2CA66E7E-38CC-45FF-913C-7B131DB20580}
+	EndGlobalSection
+EndGlobal

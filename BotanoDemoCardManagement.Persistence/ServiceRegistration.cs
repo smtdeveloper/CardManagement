@@ -1,8 +1,13 @@
 ﻿using BotanoDemoCardManagement.Application.Features.Cards.BusinessRules;
+using BotanoDemoCardManagement.Application.Features.Cards.Commands.AddCard;
+using BotanoDemoCardManagement.Application.Features.Cards.Commands.CompleteCard;
+using BotanoDemoCardManagement.Application.Features.Cards.Commands.UpdateCard;
 using BotanoDemoCardManagement.Application.Interfaces.Repositories;
 using BotanoDemoCardManagement.Application.Interfaces.UnitOfWork;
 using BotanoDemoCardManagement.Persistence.Context;
 using BotanoDemoCardManagement.Persistence.Repositories;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -16,7 +21,6 @@ public static class ServiceRegistration
 {
     public static void AddPersistenceService(this IServiceCollection services, IConfiguration configuration)
     {
-
         services.AddDbContext<PostgreDbContext>(opt =>
             opt.UseNpgsql(configuration.GetConnectionString("PostgreSQLConnection"), o => o.UseNetTopologySuite()));
 
@@ -30,6 +34,11 @@ public static class ServiceRegistration
         services.AddScoped<CardBusinessRules>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+        services.AddValidatorsFromAssembly(typeof(ServiceRegistration).Assembly, ServiceLifetime.Scoped);        
+        services.AddScoped<IValidator<AddCardCommand>, AddCardCommandValidator>();
+        services.AddScoped<IValidator<UpdateCardCommand>, UpdateCardCommandValidator>();
+        services.AddScoped<IValidator<CompleteCardCommand>, CompleteCardCommandValidator>();
+        
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         .AddJwtBearer(options =>
         {
@@ -45,6 +54,8 @@ public static class ServiceRegistration
         };
         });
 
+        services.AddFluentValidationAutoValidation();
+        services.AddFluentValidationClientsideAdapters();
 
 
     }

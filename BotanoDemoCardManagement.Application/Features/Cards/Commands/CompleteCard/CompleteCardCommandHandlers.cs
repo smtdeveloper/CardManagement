@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using BotanoDemoCardManagement.Application.Features.Cards.BusinessRules;
+using BotanoDemoCardManagement.Application.Features.Cards.Commands.AddCard;
+using BotanoDemoCardManagement.Application.Features.Cards.Commands.UpdateCard;
 using BotanoDemoCardManagement.Application.Interfaces.Repositories;
 using BotanoDemoCardManagement.Application.Interfaces.UnitOfWork;
 using BotanoDemoCardManagement.Domain.Entities.Enums;
 using BotanoDemoCardManagement.Domain.Entities.UserEntities;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
@@ -18,7 +21,7 @@ public class CompleteCardCommandHandler : IRequestHandler<CompleteCardCommand, C
     private readonly IUnitOfWork _unitOfWork;
     private readonly CardBusinessRules _cardBusinessRules;
     private readonly IHttpContextAccessor _httpContextAccessor;
-
+    private readonly IValidator<CompleteCardCommand> _validator;
 
     public CompleteCardCommandHandler(
         IMapper mapper,
@@ -26,7 +29,8 @@ public class CompleteCardCommandHandler : IRequestHandler<CompleteCardCommand, C
         IUserAnswerRepository userAnswerRepository,
         IUnitOfWork unitOfWork,
         IHttpContextAccessor httpContextAccessor,
-        CardBusinessRules cardBusinessRules)
+        CardBusinessRules cardBusinessRules,
+        IValidator<CompleteCardCommand> validator)
     {
         _mapper = mapper;
         _cardRepository = cardRepository;
@@ -34,10 +38,18 @@ public class CompleteCardCommandHandler : IRequestHandler<CompleteCardCommand, C
         _unitOfWork = unitOfWork;
         _httpContextAccessor = httpContextAccessor;
         _cardBusinessRules = cardBusinessRules;
+        _validator = validator;
+        
     }
 
     public async Task<CompleteCardCommandResponse> Handle(CompleteCardCommand request, CancellationToken cancellationToken)
     {
+        var validationResult = await _validator.ValidateAsync(request, cancellationToken);
+        if (!validationResult.IsValid)
+        {
+            throw new FluentValidation.ValidationException(validationResult.Errors);
+        }
+
         var card = await _cardRepository.GetCardByIdAsync(request.CardId, cancellationToken);
         await _cardBusinessRules.CheckIfCardIsNull(card);
         await _cardBusinessRules.CheckIfCardIsCompleted(card, request.CompleteCardModel.Answers);

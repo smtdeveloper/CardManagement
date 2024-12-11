@@ -13,6 +13,5 @@ public static class ApplicationServiceRegistration
         {
             configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
         });
-
     }
 }

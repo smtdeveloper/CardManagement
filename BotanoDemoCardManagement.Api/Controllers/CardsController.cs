@@ -1,9 +1,12 @@
 ﻿using BotanoDemoCardManagement.Application.Features.Cards.Commands.AddCard;
+using BotanoDemoCardManagement.Application.Features.Cards.Commands.CompleteCard;
 using BotanoDemoCardManagement.Application.Features.Cards.Commands.UpdateCard;
 using BotanoDemoCardManagement.Application.Features.Cards.Queries.GetAllCards;
 using BotanoDemoCardManagement.Application.Features.Cards.Queries.GetByIdCard;
+using BotanoDemoCardManagement.Domain.Entities.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BotanoDemoCardManagement.Api.Controllers
 {
@@ -47,5 +50,13 @@ namespace BotanoDemoCardManagement.Api.Controllers
             var result = await _mediator.Send(updateCompanyQuery);
             return Ok(result);
         }
+
+        [HttpPost("complete")]
+        public async Task<IActionResult> CompleteCard([FromBody] CompleteCardCommand completeCardCommand)
+        {
+            var result = await _mediator.Send(completeCardCommand);
+            return Ok(result);
+        }
+
     }
 }

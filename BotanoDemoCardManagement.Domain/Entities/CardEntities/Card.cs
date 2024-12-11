@@ -1,5 +1,6 @@
 ﻿using BotanoDemoCardManagement.Domain.Entities.Common;
 using BotanoDemoCardManagement.Domain.Entities.Enums;
+using BotanoDemoCardManagement.Domain.Entities.UserEntities;
 
 namespace BotanoDemoCardManagement.Domain.Entities.CardEntities;
 
@@ -13,5 +14,6 @@ public class Card : BaseEntity
     public CardStatus Status { get; set; } = CardStatus.NotStarted;
 
     public CardType CardType { get; set; }
+    public ICollection<UserCardAnswer> UserCardAnswers { get; set; }
     public ICollection<CardQuestion> Questions { get; set; }
 }

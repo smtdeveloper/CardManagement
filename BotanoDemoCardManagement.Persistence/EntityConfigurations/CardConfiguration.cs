@@ -24,6 +24,10 @@ public class CardConfiguration : IEntityTypeConfiguration<Card>
         builder.HasMany(c => c.Questions)
             .WithOne(q => q.Card)
             .HasForeignKey(q => q.CardId);
+
+        builder.HasMany(c => c.UserCardAnswers)
+            .WithOne(uca => uca.Card)
+            .HasForeignKey(uca => uca.CardId);
     }
 }
 

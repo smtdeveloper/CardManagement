@@ -1,4 +1,5 @@
 ﻿using BotanoDemoCardManagement.Domain.Entities.CardEntities;
+using BotanoDemoCardManagement.Domain.Entities.UserEntities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
@@ -11,6 +12,8 @@ public class PostgreDbContext : DbContext
     public DbSet<CardQuestion> CardQuestions { get; set; }
     public DbSet<CardQuestionChoice> CardQuestionChoices { get; set; }
     public DbSet<CardType> CardTypes { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserCardAnswer> UserCardAnswers { get; set; }
 
     protected IConfiguration Configuration { get; set; }
     public PostgreDbContext(DbContextOptions<PostgreDbContext> postgreDbContextOptions, IConfiguration configuration) : base(postgreDbContextOptions)

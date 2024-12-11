@@ -18,6 +18,7 @@ public static class ServiceRegistration
             opt.UseNpgsql(configuration.GetConnectionString("PostgreSQLConnection"), o => o.UseNetTopologySuite()));
 
         services.AddScoped<ICardRepository, CardRepository>();       
+        services.AddScoped<IUserAnswerRepository, UserAnswerRepository>();       
         services.AddScoped(typeof(IAsyncGenericRepository<>), typeof(AsyncGenericRepository<>));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 

@@ -19,8 +19,8 @@ public class CardRepository : AsyncGenericRepository<Card>, ICardRepository
         return await _context.Cards
        .Include(_card => _card.CardType)
        .Include(_card => _card.Questions)
-       .ThenInclude(_cardQuestion => _cardQuestion.Choices).
-       Where(_card => _card.IsDelete == false)
+       .ThenInclude(_cardQuestion => _cardQuestion.Choices)
+       .Where(_card => _card.IsDelete == false)
        .ToListAsync(cancellationToken);
     }
 

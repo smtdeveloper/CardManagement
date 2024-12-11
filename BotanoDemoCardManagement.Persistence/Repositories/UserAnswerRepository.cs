@@ -11,7 +11,6 @@ public class UserAnswerRepository : AsyncGenericRepository<UserCardAnswer>, IUse
     public UserAnswerRepository(PostgreDbContext context, IMapper mapper) : base(context, mapper)
     {
     }
-
     public async Task<UserCardAnswer?> GetUserAnswerAsync(Guid cardId, Guid questionId, CancellationToken cancellationToken)
     {
         return await _context.UserCardAnswers

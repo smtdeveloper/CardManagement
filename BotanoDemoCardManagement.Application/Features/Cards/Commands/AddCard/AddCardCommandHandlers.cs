@@ -24,9 +24,7 @@ public class AddCardCommandHandlers : IRequestHandler<AddCardCommand, AddCardCom
 
     public async Task<AddCardCommandResponse> Handle(AddCardCommand request, CancellationToken cancellationToken)
     {
-        Card card = _mapper.Map<Card>(request); // Ensure proper mapping happens here.
-
-        // Avoid adding questions and choices manually here if it's already handled in AutoMapper.
+        Card card = _mapper.Map<Card>(request);
         await _cardBusinessRules.CheckIfCardIsNull(card);
 
         card.CreatedDate = DateTime.UtcNow;
@@ -34,10 +32,7 @@ public class AddCardCommandHandlers : IRequestHandler<AddCardCommand, AddCardCom
         await _unitOfWork.CommitAsync();
 
         AddCardCommandResponse response = _mapper.Map<AddCardCommandResponse>(addedCard);
-
         return response;
     }
     
-
-
 }

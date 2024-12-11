@@ -6,7 +6,7 @@ namespace BotanoDemoCardManagement.Application.Features.Cards.Commands.CompleteC
 public class CompleteCardCommand : IRequest<CompleteCardCommandResponse>
 {
     public Guid CardId { get; set; }
-    public CompleteCardModel completeCardModel { get; set; }
+    public CompleteCardModel CompleteCardModel { get; set; }
 }
 
 public class CompleteCardModel

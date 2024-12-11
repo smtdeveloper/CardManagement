@@ -18,6 +18,7 @@ public class CardModel
 
 public class QuestionResponse
 {
+    public Guid Id { get; set; }
     public string Text { get; set; }
     public int SortIndex { get; set; }
     public List<ChoiceResponse> Choices { get; set; } = new List<ChoiceResponse>();
@@ -25,6 +26,7 @@ public class QuestionResponse
 
 public class ChoiceResponse
 {
+    public Guid Id { get; set; }
     public string Text { get; set; }
     public int SortIndex { get; set; }
 }

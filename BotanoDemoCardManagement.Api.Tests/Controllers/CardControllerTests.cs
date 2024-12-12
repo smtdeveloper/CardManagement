@@ -25,7 +25,7 @@ public class CardControllerTests
         var addCardCommand = new AddCardCommand
         {
             CardName = "Flaming Phoenix",
-            CardTypeId = Guid.NewGuid(),
+            CardTypeId = Guid.Parse("d9b5f7a8-1c5b-4b99-b8e1-d045dd2f0a30"),
             ImageUrl = "https://example.com/images/flaming_phoenix.jpg",
             Description = "A mythical bird with fiery wings.",
             Status = CardStatus.NotStarted,
@@ -73,9 +73,9 @@ public class CardControllerTests
         // Arrange
         var updateCardCommand = new UpdateCardCommand
         {
-            Id = Guid.NewGuid(),
+            Id = Guid.Parse("e3a7c4d5-9a8f-43b7-93c4-ec2b29b4b3a1"),
             CardName = "Flaming Phoenix Updated",
-            CardTypeId = Guid.NewGuid(),
+            CardTypeId = Guid.Parse("b2b9e8b7-4c72-4f5d-b8a6-223c8dd77e20"),
             ImageUrl = "https://example.com/images/flaming_phoenix_updated.jpg",
             Description = "An updated description for the Phoenix.",
             Status = CardStatus.NotStarted,
@@ -83,13 +83,13 @@ public class CardControllerTests
                 {
                     new QuestionUpdateResponse
                     {
-                        Id = Guid.NewGuid(),
+                        Id = Guid.Parse("e3a7c4d5-9a8f-43b7-93c4-ec2b29b4b3a1"),
                         Text = "What is the primary element of the Phoenix?",
                         SortIndex = 1,
                         Choices = new List<ChoiceUpdateResponse>
                         {
-                            new ChoiceUpdateResponse { Id = Guid.NewGuid(), Text = "Fire", SortIndex = 1 },
-                            new ChoiceUpdateResponse { Id = Guid.NewGuid(), Text = "Water", SortIndex = 2 }
+                            new ChoiceUpdateResponse { Id = Guid.Parse("28a210c7-0d48-4ac8-8547-25a8307dffca"), Text = "Fire", SortIndex = 1 },
+                            new ChoiceUpdateResponse { Id = Guid.Parse("48f3302e-e627-4cbf-a7a1-1af2c95cfc63"), Text = "Water", SortIndex = 2 }
                         }
                     }
                 }

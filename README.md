@@ -11,6 +11,8 @@ This project was developed as part of the Botano Technologies hiring process. It
 - **Fluent Validation**
 - **AutoMapper**
 - **MediatR**
+- **Xunit**
+- **Moq**
 - **JwtBearer** authentication
 - **PostgreSQL**
 - **Swagger**

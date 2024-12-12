@@ -1,54 +1,79 @@
-# .NET Backend Geliştirici Projesi
-<br>
-Proje Açıklaması:<br>
-Bu proje, Botano Technologies işe alım süreci kapsamında geliştirilmiştir. Proje, bir kart yönetim yapısı için bir API içermektedir ve aşağıdaki gereksinimlere göre hazırlanmıştır.
-<br> <br>
-Teknolojiler ve Araçlar: <br>
- - .NET 8 CQRS mimarisi<br>
- - Entity Framework Core<br>
- - Fluent Validation<br>
- - AutoMapper <br>
- - MediatR<br>
- - JwtBearer<br>
- - PostgreSQL<br>
- - Swagger<br>
-<br>
-Özellikler;<br>
-GUID Kullanımı: ID alanları için GUID tercih edilmiş ve sıralı GUID kullanılmıştır.
-GUID: Global benzersizlik sağlar, güvenlidir, dağıtık sistemler için uygundur.
-Sıralı GUID(SequentialGuidValueGenerator): Daha iyi performans ve daha az veritabanı parçalanması.
-<br>
-Veritabanı:<br> 
-PostgreSQL için uzak sunucu kullanılmıştır. Bağlantı bilgileri, API projesinin appsettings.json dosyasında bulunmaktadır.
-<br>
-Enum Kullanımı: CardStatus enum olarak ayarlanmıştır, bu şekilde
-Tip Güvenli hale gelmiştir, Belirli bir set içerisindeki değerlerle sınırlandırılmıştır.
-<br>
-<br>
-API Endpoint'leri:<br>
-POST : Yeni kart ekler. Karta ait tüm veri JSON formatında gönderilir.
-PUT  : Mevcut kartı günceller.
-GET  : api/card: Tüm kartları listeler. Karta ait tüm veri döndürülür.
-GET  : api/card/{id}: Belirli bir kartın detayını getirir. Karta ait tüm veri döndürülür.
-<br>
-<br>
-Ekstralar (Opsiyonel)<br>
-Basit kullanıcı giriş ve kayıt API Endpoint'leri eklenmiştir. JWT ile kimlik doğrulaması sağlanmaktadır.
-<br>
-<br>
-Kartları "done" duruma çekmek için bir API Endpoint eklenmiştir. Bu Endpoint'e istek atabilmek için giriş yapmak zorunludur. Tüm aktif kartlar tüm kullanıcılar tarafından cevaplanabilir. Çoktan çoğa ilişki kurulmuştur. Bir karttaki tüm sorular cevaplandığında, o kartın durumu "done" olarak güncellenir.
-<br>
-<br>
-Varsayımlar ve Kararlar<br>
-Görev dökümanında örnek veride card id, questions id ve choices id alanları bulunmamaktaydı; bu alanlar, kartların işleme tabi tutulabilmesi için eklenmiştir. Bu eklemeler, frontend geliştirici için yapılmıştır.
-<br>
-<br>
-Test Kullanıcı Bilgileri;<br>
-Sisteme login olmak için test kullanıcı ile giriş yapabilir veya yeni kayıt oluşturabilirsiniz.
-Test User;
-Email: codi@gmail.com
-Password: 123
-<br>
-<br>
-Proje Yükleme ve Erişim<br>
-Proje, GitHub hesabım olan smtdeveloper'a private olarak yüklenmiştir ve admin@botano.com e-posta adresine erişim sağlanmıştır.
+# .NET Backend Developer Project
+
+## 📖 Project Description
+This project was developed as part of the Botano Technologies hiring process. It provides an API for managing a card structure and is designed to meet the following requirements.
+
+---
+
+## 🛠️ Technologies and Tools
+- **.NET 8** with CQRS architecture
+- **Entity Framework Core**
+- **Fluent Validation**
+- **AutoMapper**
+- **MediatR**
+- **JwtBearer** authentication
+- **PostgreSQL**
+- **Swagger**
+
+---
+
+## 🚀 Features
+
+### GUID Implementation
+- **GUIDs** are used for ID fields to ensure global uniqueness, security, and suitability for distributed systems.
+- **Sequential GUIDs**: Improve performance and reduce database fragmentation.
+
+### Database
+- A remote PostgreSQL server is used for the database.
+- Connection details are configured in the `appsettings.json` file of the API project.
+
+### Enum Usage
+- **CardStatus** is implemented as an enum to:
+  - Ensure type safety.
+  - Restrict values to a defined set.
+
+---
+
+## 🌐 API Endpoints
+
+### Card Management
+- **POST** `/api/card`: Adds a new card. All card data is sent in JSON format.
+- **PUT** `/api/card`: Updates an existing card.
+- **GET** `/api/card`: Lists all cards with their details.
+- **GET** `/api/card/{id}`: Retrieves details of a specific card.
+
+### Authentication
+- Basic user login and registration endpoints are included.
+- Authentication is handled using **JWT**.
+
+### Additional Features
+- **Marking Cards as "Done"**:
+  - An API endpoint allows marking a card as "done."
+  - Login is required to access this endpoint.
+  - All active cards are accessible to all users.
+  - Cards have a many-to-many relationship; when all questions in a card are answered, its status is updated to "done."
+
+---
+
+## 💡 Assumptions and Decisions
+- Example data provided in the task document did not include `card id`, `questions id`, or `choices id`. These fields were added for operational purposes and to assist frontend developers.
+
+---
+
+## 🧪 Test User Information
+You can log in using the test user credentials or create a new account.
+
+- **Test User Credentials**:
+  - Email: `codi@gmail.com`
+  - Password: `123`
+
+---
+
+## 📂 Project Deployment and Access
+- The project is hosted privately on my GitHub account: [smtdeveloper](https://github.com/smtdeveloper).
+- Access has been granted to `admin@botano.com`.
+
+---
+
+## 📜 Notes
+For any inquiries, please feel free to reach out to me via GitHub or email.

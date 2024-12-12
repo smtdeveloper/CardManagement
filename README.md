@@ -2,7 +2,7 @@
 <br>
 Proje Açıklaması:<br>
 Bu proje, Botano Technologies işe alım süreci kapsamında geliştirilmiştir. Proje, bir kart yönetim yapısı için bir API içermektedir ve aşağıdaki gereksinimlere göre hazırlanmıştır.
-<br><br>
+<br> <br>
 Teknolojiler ve Araçlar: <br>
  - .NET 8 CQRS mimarisi<br>
  - Entity Framework Core<br>

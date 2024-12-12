@@ -1,8 +1,10 @@
 using BotanoDemoCardManagement.Api.Middlewares;
 using BotanoDemoCardManagement.Application;
 using BotanoDemoCardManagement.Persistence;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +34,27 @@ builder.Services.AddSwaggerGen(opt =>
         }
     );
     opt.OperationFilter<BearerSecurityRequirementOperationFilter>();
+
+    opt.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Card Management API",
+        Description = "This project was developed as part of the Botano Technologies recruitment process.",
+        Contact = new OpenApiContact
+        {
+            Name = "Botano Technologies ",
+            Email = "admin@botano.com",
+            Url = new Uri("https://botano.com/"),
+            
+        }
+
+    });
+    // XML yorumlarý eklemek için
+    var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    opt.IncludeXmlComments(xmlPath);
 });
+
 
 var app = builder.Build();
 app.UseSwagger();

@@ -12,6 +12,10 @@ namespace BotanoDemoCardManagement.Api.Controllers;
 [ApiController]
 public class CardsController : BaseController
 {
+    public CardsController()
+    {
+    }
+
     /// <summary>
     /// Lists all cards.
     /// </summary>

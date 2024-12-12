@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C4249819-0C60-4CD2-9E29-8F28783F95B4}"
 EndProject
@@ -20,6 +20,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Api", "BotanoDemoCardManagement.Api\BotanoDemoCardManagement.Api.csproj", "{01C1C527-B15D-4129-B5D1-C91BF287BA02}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Shared", "BotanoDemoCardManagement.Shared\BotanoDemoCardManagement.Shared.csproj", "{B3D402C5-D06F-4CAA-9072-9C7B2642C267}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9A42CC03-D928-4837-9A3C-DE2C632048CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotanoDemoCardManagement.Api.Tests", "BotanoDemoCardManagement.Api.Tests\BotanoDemoCardManagement.Api.Tests.csproj", "{FDCE0DED-E180-4FE4-A8FE-53CC9AAB56F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,10 @@ Global
 		{B3D402C5-D06F-4CAA-9072-9C7B2642C267}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3D402C5-D06F-4CAA-9072-9C7B2642C267}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3D402C5-D06F-4CAA-9072-9C7B2642C267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDCE0DED-E180-4FE4-A8FE-53CC9AAB56F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDCE0DED-E180-4FE4-A8FE-53CC9AAB56F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDCE0DED-E180-4FE4-A8FE-53CC9AAB56F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDCE0DED-E180-4FE4-A8FE-53CC9AAB56F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,5 +65,6 @@ Global
 		{61469BF6-A21E-4E67-A08E-66D6E285C799} = {121ED1F1-E846-4E79-8275-F410178A79A9}
 		{01C1C527-B15D-4129-B5D1-C91BF287BA02} = {CCDAD637-5F1C-4A3F-ABD1-0D10E19842C7}
 		{B3D402C5-D06F-4CAA-9072-9C7B2642C267} = {2CA66E7E-38CC-45FF-913C-7B131DB20580}
+		{FDCE0DED-E180-4FE4-A8FE-53CC9AAB56F5} = {9A42CC03-D928-4837-9A3C-DE2C632048CE}
 	EndGlobalSection
 EndGlobal

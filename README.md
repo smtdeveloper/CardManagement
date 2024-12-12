@@ -4,14 +4,14 @@ Proje Açıklaması:<br>
 Bu proje, Botano Technologies işe alım süreci kapsamında geliştirilmiştir. Proje, bir kart yönetim yapısı için bir API içermektedir ve aşağıdaki gereksinimlere göre hazırlanmıştır.
 
 Teknolojiler ve Araçlar <br>
-.NET 8 CQRS mimarisi
-Entity Framework Core
-Fluent Validation
-AutoMapper 
-MediatR
-JwtBearer
-PostgreSQL
-Swagger
+.NET 8 CQRS mimarisi<br>
+Entity Framework Core<br>
+Fluent Validation<br>
+AutoMapper <br>
+MediatR<br>
+JwtBearer<br>
+PostgreSQL<br>
+Swagger<br>
 
 Özellikler;<br>
 GUID Kullanımı: ID alanları için GUID tercih edilmiş ve sıralı GUID kullanılmıştır.

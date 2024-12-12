@@ -19,6 +19,8 @@ This project was developed as part of the Botano Technologies hiring process. It
 
 ## 🚀 Features
 
+- **Documentation written with Swagger**.
+
 ### GUID Implementation
 - **GUIDs** are used for ID fields to ensure global uniqueness, security, and suitability for distributed systems.
 - **Sequential GUIDs**: Improve performance and reduce database fragmentation.

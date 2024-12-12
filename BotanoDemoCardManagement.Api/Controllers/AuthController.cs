@@ -51,8 +51,8 @@ public class AuthController : BaseController
     /// Request Body:
     /// json
     /// {
-    ///     "email": "example@example.com",
-    ///     "password": "SecurePassword123"
+    ///     "email": "codi@gmail.com",
+    ///     "password": "123"
     /// }
     /// 
     /// </remarks>

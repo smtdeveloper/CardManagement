@@ -3,8 +3,6 @@ using BotanoDemoCardManagement.Application.Interfaces.Repositories;
 using BotanoDemoCardManagement.Domain.Entities.CardEntities;
 using BotanoDemoCardManagement.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
-using System.Linq;
 
 namespace BotanoDemoCardManagement.Persistence.Repositories;
 

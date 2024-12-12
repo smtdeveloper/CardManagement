@@ -1,10 +1,8 @@
 using BotanoDemoCardManagement.Api.Middlewares;
 using BotanoDemoCardManagement.Application;
 using BotanoDemoCardManagement.Persistence;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,7 +47,7 @@ builder.Services.AddSwaggerGen(opt =>
         }
 
     });
-    // XML yorumlarý eklemek için
+    // To add XML comments
     var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     opt.IncludeXmlComments(xmlPath);

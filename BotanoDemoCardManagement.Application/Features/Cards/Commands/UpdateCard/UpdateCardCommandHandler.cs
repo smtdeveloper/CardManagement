@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using BotanoDemoCardManagement.Application.Features.Cards.BusinessRules;
-using BotanoDemoCardManagement.Application.Features.Cards.Commands.AddCard;
 using BotanoDemoCardManagement.Application.Interfaces.Repositories;
 using BotanoDemoCardManagement.Application.Interfaces.UnitOfWork;
 using FluentValidation;

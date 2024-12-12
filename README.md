@@ -77,3 +77,11 @@ You can log in using the test user credentials or create a new account.
 
 ## 📜 Notes
 For any inquiries, please feel free to reach out to me via GitHub or email.
+
+---
+
+## 🔗 Connect with Me
+- **LinkedIn**: [linkedin.com/in/bensametakca/](https://www.linkedin.com/in/bensametakca/)
+- **Email**: [bensametakca@gmail.com](mailto:bensametakca@gmail.com)
+- **Instagram**: [instagram.com/smtcoder/](https://www.instagram.com/smtcoder/) (I create engaging and educational content related to coding here!)
+

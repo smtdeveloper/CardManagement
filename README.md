@@ -1,7 +1,5 @@
 # .NET Backend Developer Project
 
-## 📖 Project Description
-This project was developed as part of the Botano Technologies hiring process. It provides an API for managing a card structure and is designed to meet the following requirements.
 
 ---
 
